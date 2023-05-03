@@ -71,6 +71,24 @@ DATABASES = {
 }
 
 
+# Cache
+
+REDIS_HOST = os.environ.get('REDIS_HOST')
+REDIS_PORT = '6379'
+REDIS_PASSWORD = os.environ.get('REDIS_PASSWORD')
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': f'redis://{REDIS_HOST}:{REDIS_PORT}/',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+            'PASSWORD': REDIS_PASSWORD,
+        },
+    }
+}
+
+
 # Password validation
 
 AUTH_PASSWORD_VALIDATORS = [
