@@ -1,0 +1,9 @@
+*.pyc
+__pycache__/
+.bash_profile
+.log
+
+.env
+
+.DS_Store
+.idea/
