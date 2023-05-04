@@ -88,6 +88,9 @@ CACHES = {
     }
 }
 
+# Cache time (15 minutes)
+CACHE_TTL = 60 * 15
+
 
 # Password validation
 
